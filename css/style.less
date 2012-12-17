@@ -1,0 +1,764 @@
+@import url(reset.css);
+
+@font-face {
+    font-family: 'Steelfish';
+    src: url('../font/steelfish.ttf');
+}
+
+@font-face {
+    font-family: 'RopaSansRegular';
+    src: url('../font/RopaSans/RopaSans-Regular-webfont.eot');
+    src: url('../font/RopaSans/RopaSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/RopaSans/RopaSans-Regular-webfont.woff') format('woff'),
+         url('../font/RopaSans/RopaSans-Regular-webfont.ttf') format('truetype'),
+         url('../font/RopaSans/RopaSans-Regular-webfont.svg#RopaSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/************* PROPRIETES LESS ********************/
+
+@beige: #DACBAE;
+@brun: #644415;
+@vert: #86AE28;
+@vert-clair: #a6c94e;
+@vert-fonce: #455f0a;
+@steelfish: 'Steelfish', 'Sans-serif';
+@ropa: 'RopaSansRegular', 'Sans-serif';
+
+/*********** FIN PROPRIETES LESS *****************/
+/******************** PROPRIETES COMMUNES ***********/
+body {
+	background-image: url('../img/bg/body-bg.jpg');
+	font-family: @ropa;
+	font-size: 16px;
+	max-width: 1024px;
+	margin: 0 auto;
+	color: @brun;
+}
+
+li {
+	list-style-type: none;
+}
+
+h2 {
+	font-size: 34px;
+	font-family: @steelfish;
+	color:  @brun;
+	display: inline;
+	text-transform: uppercase;
+	position: relative;
+	font-weight: normal;
+
+	&:after {
+		content: "";
+		width: 150px;
+		position: absolute;
+		background-color: @vert;
+		height: 10px;
+		left: 26px;
+		top: 32px;
+		z-index: -1;
+		box-shadow: 2px 2px 2px #999;
+	}
+
+	&.h2-promo {
+		display: none;
+	}
+}
+
+#container {
+	margin: 30px 0 0 64px;
+}
+
+#display-none {
+	display: none;
+}
+
+button {
+	font-size: 18px;
+	font-family: @ropa;
+	background-color: @vert-fonce;
+	color: @beige;
+	border: none;
+	margin-top: 0.5em;
+	padding: 0.1em 0.2em;
+	width: 100%;
+	cursor: pointer;
+
+	&:hover {
+		background-color: @vert;
+		color: @brun;
+	}
+}
+
+#fil-ariane {
+	padding-bottom: 1em;
+
+	li {
+		display: inline;
+
+		&:first-child {
+			text-decoration: underline;	
+		}
+
+	 	a {
+	 		color: @brun;
+	 	}
+	}
+}
+
+/******************* FIN PROPRIETES COMMUNES ***********/
+/******************** HEADER ********************/
+header {
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+h1 {
+	width: 233px;
+	height: 153px;
+	position: absolute;
+	margin: 20px 0 0 399px;
+	z-index: 2;
+}
+
+#menu {
+	background-image: url('../img/bg/menu-bg.png');
+	width: 1024px;
+	height: 5.4em;
+	z-index: 1;
+	font-family: @steelfish;
+
+	position: relative;
+
+	ul {
+		margin-left: -28px;
+	}
+
+	li {
+		display: inline;
+		position: relative;
+		top: 0.5em;
+		text-transform: uppercase;
+		padding: 0.1em 1em;
+		border: none;	
+		font-size: 30px;
+
+		&:hover {
+			color: @beige;
+			cursor: pointer;
+			background-color: @vert;
+			border-radius : 4px;
+		}
+
+		&.none {
+			padding: 0 1.5em;
+			visibility: hidden;
+		}	
+	}
+}
+
+#sous-menu {
+	background-image: url('../img/bg/sous-menu.jpg');
+	width: 984px;
+	text-align: center;
+	position: relative;
+	margin: -0.5em auto;
+}
+
+#search-box{
+	float: left;
+	margin: 30px 0 0 43px;
+
+	input {
+		background: url('../img/bg/search-box.png') no-repeat;
+		border: none;
+		padding: 0.6em;
+		font-size: 14px;	
+		color: @brun;
+		width: 155px;
+		border-radius: 4px;
+	}
+
+	p {
+		position: absolute;
+		margin: -31px 0 0 140px;
+		cursor: pointer;
+	}
+
+	img {
+		border-radius: 4px;	
+	}
+}
+
+#connexion, #basket {
+	float: right;
+	font-size: 18px;
+
+	li {
+		display: inline;
+	}
+
+	a {
+		color: @beige;
+	}
+}
+
+#basket {
+	margin: 30px 46px 0 0;
+
+	p:before {
+		content:"";
+		background: url('../img/panier.png') no-repeat;
+		width: 100px;
+		text-indent: -9999px;
+		position: absolute;
+		margin: -8px 0 0 -30px;
+		height: 30px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+#basket-details{
+	position: absolute;
+	background-color: @beige;
+	border: 2px solid @vert-fonce;
+	padding: 0.6em;
+	margin-left: 773px;
+	margin-top: 50px;
+	z-index: 3;
+	font-size: 15px;
+	border-radius: 3px;
+
+	p {
+		text-align: left;
+		border-bottom: 1px dashed @vert-fonce;
+		padding-bottom: 0.5em;
+	}
+
+	td {
+		padding: 0.3em 0;
+	}
+
+	td:first-child {
+		padding-right: 2.5em;
+		text-align: right;
+	}		
+}
+
+#connexion {
+	margin: 40px -163px 30px 0 ;
+	padding: 1em 0 2em 0;
+
+	li {
+		color: @beige;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: @vert;
+	}
+}
+	
+#menu-dropdown {
+	clear: both;
+	font-size: 19px;
+	position: relative;
+	top: -0.5em;
+	width: 896px;
+	margin: 0 auto;
+	font-family: @ropa;
+
+	li {
+		display: inline;
+		padding-right: 0.5em;
+
+		& + li {
+	  		border-left: 1.8px solid @beige;
+	  		padding-left: 0.5em;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: @beige;
+	}
+
+	li + li + li + li + li + li + li + li + li {
+  		border-left: 1.8px solid @beige;
+  		padding-right: 0em;
+	}
+
+	.li-nav:hover > a {
+		color: @beige;
+		border-bottom: 8px solid @beige;
+	}
+}
+
+#menu-dropdown .dropdown {
+	background-color: @beige;
+	border: 3px solid @vert-fonce;
+	position: absolute;
+	z-index: 2;
+	font-size: 16px;
+	margin-top: 0.4em;
+	padding-top: 1.5em;
+	text-align: left;
+	color: @vert-fonce;
+	height: 330px;
+	width: 100%;
+
+	p {
+		padding: 0.2em 0;
+		
+		a {
+			color: @vert;
+			font-size: 30px;
+			font-family: @steelfish;
+		}
+	}
+
+	img {
+		box-shadow: 0px 0px 4px @vert;
+	}
+
+	a {
+		text-decoration: none;
+		color: @vert-fonce;	
+	}
+
+	li {
+		display: block;
+		padding-left: 1em;
+
+		& a:hover {
+			text-decoration: underline;
+			border: none;
+		}
+	}
+
+	.desc {
+		border-right: 2px solid @vert-fonce;
+
+		li {
+			padding-left: 0em;
+		}
+	}
+}
+
+.colonne {
+	display: inline-block; 
+	width: 189px;
+	float: left;
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: normal;
+	padding: 0.5em 0;
+}
+/******************** FIN HEADER ********************/
+/******************** DIV AVANTAGES ********************/
+
+.avantages {
+	float: left;
+
+	ul {
+		padding-top: 1em;
+		width: 172px;
+		font-size: 15px;
+	}
+
+	li {
+		background : url('../img/sprite.png') no-repeat;
+		list-style-type: none;
+		padding: 0.5em 0;
+		text-align: left;
+		height: 25px;
+
+		&.livraison {
+			background-position: 0px -48px;	
+		}
+
+		&.frais {
+			background-position: 0px -96px;
+		}
+
+		&.paiement {
+			background-position: 0px -144px;
+		}
+
+		&.service {
+			background-position: 0px -192px;
+		}
+
+		&.remise {
+			background-position: 0px -240px;
+		}
+	}
+
+	p {
+		margin-left: 44px;
+		margin-top: 0.1em;
+		height: 40px;
+	}
+}
+
+.service p, .remise p, .frais p {
+	margin-top: -0.4em;
+}
+/******************* FIN DIV AVANTAGES ********************/
+/******************* PROMO FETES ********************/
+
+#promo-fetes {
+	margin-left: 260px;
+}
+
+/******************* FIN PROMO FETES ********************/
+
+.news, .promos, .product-liquid, .product-list {
+	clear: both;
+	padding-top: 2em;
+
+	a {
+		color: @brun;
+		text-decoration: none;
+		text-align: center;
+
+		&.voir {
+			float: right;
+			margin: 25px 66px 0 0;
+			text-decoration: underline;	
+		}
+
+		&.voir:hover {
+			text-decoration: none;
+		}
+
+		&.voir-liquid {
+			padding-bottom: 4em;
+		}
+	}
+
+	li {
+		padding: 0.2em;
+		display: inline-block;
+		width: 152px;
+		background-color: @vert;
+		margin: 15px 20px 0 0;
+		box-shadow: 2px 2px 1px #999;
+
+		&:hover {
+			background-color: @vert-clair;
+			box-shadow: 2px 2px 4px #999;
+		}
+
+		&.marqueurs:after {
+			content:"";
+			background: url('../img/marqueurs.png') no-repeat;
+			position: absolute;
+			height: 60px;
+			width: 60px;
+			margin-top: -280px;
+			margin-left: 110px;
+		}
+
+		.reduction {
+			position: absolute;
+			margin-top: -276px;
+			margin-left: 127px;
+			font-size: 34px;
+			z-index: 1;
+			font-family: @steelfish;
+		}
+
+		.pourcent {
+			font-size: 40%;
+			position: absolute;
+			margin-top: 21px;
+			margin-left: 3px;
+			font-family: @steelfish;
+		}
+
+		.delete-price {
+			text-align: right;
+			padding-right: 0.5em;
+			text-decoration: line-through;
+			font-family: @steelfish;
+			font-size: 18px;
+		}
+
+		.new-price {
+			font-size: 38px;
+			color: @beige;
+			font-family: @steelfish;
+		}
+	}
+}
+
+/*************** FOOTER ************************/
+
+#footer {
+	border-top: 5px solid @vert;
+	height: 140px;
+	clear: both;
+
+	div {
+		width: 242px;
+		display: inline-block;
+		float: left;
+		padding: 0 1em;
+
+		&.newsletter, &.livraison {
+			padding: 0 4em;
+		}
+
+		&.newsletter {
+
+			input {
+				padding: 0.5em;
+				color: @brun;
+			}
+
+			.submit {
+				font-size: 18px;
+				font-family: @ropa;
+				background-color: @vert;
+				color: @beige;
+				border: none;
+				padding: 0.2em;
+				cursor: pointer;
+
+				&:hover {
+					background-color: @brun;
+				}
+			}
+		}
+
+		&.paiement {
+			padding-left: 1.3em;
+			padding-right: 1.3em;
+		}
+
+		p {
+			padding-bottom: 1em;
+		}
+	}
+
+	h3 {
+		text-transform: uppercase;
+		font-family: @steelfish;
+		font-size: 23px;
+	}
+
+	.paiement li, .livraison li {
+		width: 33px;
+		display: inline-block;
+		padding-right: 1em;
+		height: 30px;
+	}
+
+	.paiement li {
+		background: url('../img/icones/paiement.png') no-repeat;
+
+		a {
+			text-indent: -9999px;
+			display: inline-block;
+		}
+
+		&.cb {
+			background-position: -58px 0px;
+		}
+
+		&.mastercard {
+			background-position: -111px 0px;
+		}
+
+		&.visa{
+			background-position: -170px 0px;
+		}
+
+		&.paypal {
+			background-position: -231px 0px;
+			width: 65px;
+		}
+	}
+
+	.livraison li {
+		background: url('../img/icones/livraison.png') no-repeat;
+
+		a {
+			text-indent: -9999px;
+			display: inline-block;
+		}
+
+		&.bpost {
+			background-position: -68px 0px;
+			width: 38px;
+		}
+	}
+}
+
+#footer-bis {
+	background-image: url('../img/bg/footer2.png');
+	height: 250px;
+	margin-top: 2em;
+	color: @beige;
+
+	h4 {
+		padding-bottom: 0.3em;
+		text-transform: uppercase;
+		font-size: 23px;
+		font-family: @steelfish;
+		font-weight: normal;
+		color: @brun;
+	}
+
+	p {
+		padding-left: 0.5em;
+
+		a {
+			color: @brun;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	div {
+		position: relative;
+		top: 2em;
+		padding-left: 1.17em;
+		width: 177px;
+		display: inline-block;
+		float: left;
+
+		&.client {
+			padding-left: 4em;
+		}
+
+		&.facebook {
+
+			p {
+				margin: 10px 0 0 35px;
+			}
+
+			a {
+				color: @beige;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+				&:before {
+					content:"";
+					background: url('../img/icones/facebook.png') no-repeat;
+					width: 100px;
+					text-indent: -9999px;
+					margin: -6px 0 0 -35px;
+					position: absolute;
+					height: 50px;
+				}
+			}
+		}
+
+		&.copyright {
+			margin-top: 1em;
+			padding: 1em 0;
+			width: 100%;
+			text-align: center;
+			color: @brun;
+
+			li {
+				display: inline;
+
+				& + li  {
+					border-left: 1px solid @brun;
+				}
+
+				a {
+					color: @brun;
+				}
+			}
+		}
+	}
+
+	li {
+		padding-left: 0.5em;
+
+		a {
+			color: @beige;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+/************** FIN FOOTER ********************/
+
+/*****************************************************
+***************** MON COMPTE.HTML*********************
+*****************************************************/
+
+#mon-compte {
+	margin-right: 22px;
+}
+
+#mon-compte, #inscription {
+	float: left;
+	background-color: rgba(134,174,40,0.3);
+	padding: 1em;
+	width: 400px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	height: 280px;
+	font-size: 20px;
+
+	h3 {
+		background-color: @vert;
+		padding: 0.2em 0;
+		position: relative;
+		width: 440px;
+		margin: -20px 0 20px -20px;
+		text-align: center;
+		font-size: 26px;
+		text-transform: none;
+	}
+
+	p {
+		font-size: 24px;
+		margin-bottom: 0.8em;
+		padding-bottom: 0.5em;
+		border-bottom: 1px dashed @vert-fonce;
+	}
+
+	input {
+		font-family: @steelfish;
+		width: 150px;
+		margin-bottom: 0.5em;
+	}
+
+	label {
+		display: block;
+		width: 80px;
+		margin: 0.2em 0;
+	}
+}
+
+/*****************************************************
+***************** INSCRIPTION.HTML*********************
+*****************************************************/
+
+#form {
+	font-size: 35px;
+}
+
