@@ -3,14 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="Sebio - Créer mon compte / S'inscrire">
-		<title>SeBIO - Créer mon compte / S'inscrire </title>
+        <meta name="description" content="Sebio - Chèques cadeaux">
+		<title>SeBIO - Chèques cadeaux SeBio </title>
 
 		<link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 		<link href="css/style.css" rel="stylesheet" type="text/css">
+
 	</head>
 	<body>
-		<header>
+	<header>
 				<h1>
 					<a href="index.html">
 						<img src="img/logo-sebio.png" width="233px" height="153px" alt="Logo seBio - Produits naturels et écologiques">
@@ -507,150 +508,77 @@
 					</div>
 		</header>
 		<section id="container">
-			<h1 class="none">Section content</h1>
-			<h2>Identification</h2>
-			<div class="mon-compte">
-				<h3>J'ai déjà un compte chez seBio</h3>
-				<p>
-					S'identifier
-				</p>
-				<form action="connecte.html">
-					<label for="email"> Email&nbsp;:</label><input type="text" name="email" id="email"/>
-					<label for="password"> Mot de passe&nbsp;:</label><input type="password" name="password" id="password"/>
-
-					<a href="#" title="Récupérez votre mot de passe">Mot de passe oublié ?</a>
-
-					<button>
-						Se connecter
-					</button>
-				</form>	
+			<header id="display-none">
+				<h1>Avantages et offres</h1>	
+			</header>
+			<div class="sous-menu">
+				<ul>
+					<li>
+						<a href="index.html">Accueil</a>
+					</li>
+					<li>
+						<a href="nouveautes.html">Nouveautés</a>
+					</li>
+					<li>
+						<a href="promotions.html">Promotions</a>
+					</li>
+					<li>
+						<a href="liquidations.html">Liquidations</a>
+					</li>
+					<li>
+						<a href="a-propos.html">à propos</a>
+					</li>
+					<li>
+						<a href="cheques-cadeaux.html">Chèques cadeaux</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
 			</div>
-			<div class="inscription">
-				<h3>Je suis nouveau chez seBio</h3>	
-				<p>
-					Créer un compte
-				</p>
-				<form action="#creer-compte">
-					<label for="email"> Email&nbsp;:</label>
-					<input type="text" name="email" id="email"/>
-					<label for="password"> Mot de passe&nbsp;:</label>
-					<input type="password" name="password" id="password"/>
-
-					<a class="hidden" href="#" title="Récupérez votre mot de passe">Mot de passe oublié ?</a>
-
-					<button>
-						Créer un compte
-					</button>
-				</form>	
-			</div>
-			<div id="creer-compte">
-				<h3>Création de votre compte</h3>
-				<form action="connecte.html">
-					<fieldset>
-						<legend>Infos de connexion</legend>
-						<p>
-							<label for="email1">Email&nbsp;:</label>
-							<input type="text" name="email1" id="email1"/>
-						</p>
-						<p>
-							<label for="password1">Mot de passe&nbsp;:</label>
-							<input type="password1" name="password1" id="password1"/>	
-						</p>
-					</fieldset>
-					<fieldset>
-						<legend>Infos personnelles</legend>
-
-						<p>
-							<label for="genre">Genre&nbsp;:</label>
-							<select name="genre" id="genre">
-							   <option value="homme">Homme</option>
-							   <option value="femme">Femme</option>
-							</select>
-						</p>
-						<p>
-						<label for="civilite">Civilité&nbsp;:</label>
-							<select name="civilite" id="civilite">
-							   <option value="monsieur"> Mr</option>
-							   <option value="madame"> Mme</option>
-							   <option value="mademoiselle"> Melle</option>
-							</select>
-						</p>
-						<p>
-							<label for="prenom">Prénom&nbsp;:</label>
-							<input type="text" name="prenom" id="prenom"/>	
-						</p>
-						<p>
-							<label for="nom">Nom&nbsp;:</label>
-							<input type="text" name="nom" id="nom"/>
-						</p>
-						<p>
-							<label for="rue">Rue / n°&nbsp;:</label>
-							<input type="text" name="rue" id="rue"/>
-						</p>
-						<p>
-							<label for="code">Code postal&nbsp;:</label>
-							<input type="text" name="code" id="code"/>	
-						</p>
-						<p>
-							<label for="ville">Ville&nbsp;:</label>
-							<input type="text" name="ville" id="ville"/>
-						</p>
-						<p>
-							<label for="pays">Pays&nbsp;:</label>
-							<select name="pays" id="pays">
-							    <option value="Belgique">Belgique</option>
-							    <option value="France">France</option>
-							    <option value="Luxembourg">Luxembourg</option>
-							    <option value="Italie">Italie</option>
-							    <option value="Allemagne">Allemagne</option>
-							</select>
-						</p>
-						<p>
-							<label for="telephone">Téléphone&nbsp;:</label>
-							<input type="text" name="telephone" id="telephone"/>
-						</p>
-						<p>
-							<label for="gsm">GSM&nbsp;:</label>
-							<input type="text" name="gsm" id="gsm"/>
-						</p>
-					</fieldset>
-
-					<fieldset>
-						<legend>Infos supplémentaires</legend>
-						<p class="news">
-							Souhaitez-vous vous inscrire à notre newsletter ?
-							<br>Vous pouvez annuler votre inscription à tout moment.
-							<p class="newsletter-form">
-								<label for="newsletter">Newsletter&nbsp;:</label>
-								<input type="checkbox" name="newsletter" value="newsletter">
-							</p>
-						</p>
-						<p>
-							<p>Comment avez-vous connu seBio&nbsp;?</p>
-							<select name="pays" id="pays">
-							    <option value="ami">Par un ami/connaissance</option>
-							    <option value="google">Recherche sur google</option>
-							    <option value="yahoo">Recherche sur yahoo</option>
-							    <option value="autre">Recherche sur un autre site</option>
-							    <option value="showRoom">En passant devant le show-room</option>
-							     <option value="bruxelles">Par le guide de Bruxelles-vert</option>
-							    <option value="bioInfo">Pub dans le magazine Bio info</option>
-							    <option value="kelkoo">Site d'achat Kelkoo</option>
-							    <option value="vitalprix">Site d'achat Vitalprix</option>
-							    <option value="guide">Site d'achat Le Guide</option>
-							    <option value="beauté">Site d'achat Beauté-test</option>
-							</select>
-						</p>
-
-						<p class="confident">
-							<strong>Politique de confidentialité&nbsp;:</strong> Aucune information personnelle ne sera communiquée à des tiers sans votre consentement explicite. Nous, (SeBIO S.P.R.L.), collectons vos données sur ce formulaire pour traiter votre commande, ce qui ne sera pas possible si vous ne nous communiquez pas les renseignements demandés. Vous bénéficiez d'un droit d'accès, de rectification et d'opposition au traitement des données vous concernant.
-						</p>
-					</fieldset>
-
-					<button type="submit">
-						S'inscrire
-					</button>
-				</form>	
+			<div class="cheques-cadeaux">
+				<h2>Chèques cadeaux</h2>
+				<h3>Mode d'emploi&nbsp;:</h3>
+				<ul>
+					<li>
+						Vous achetez un chèque cadeau sur le site et payez la valeur nominale du chèque (10€, 25€, ou 50€) comme s'il s'agissait d'achats de produits. Vous pouvez bien sûr acheter plusieurs chèques à la fois. Le paiement se fait par carte bancaire, paypal ou par virement.
+					</li>
+					<li>
+						Attention&nbsp;: pour le mode d'expédition, vous choisissez 'retrait par le client', afin de n'avoir aucun frais de port à payer ! 
+					</li>
+					<li>
+						Le site vous permet à présent de choisir entre format réel ou virtuel. Le chèque sous format réel vous sera envoyé, sauf si vous indiquez une adresse de livraison différente, qui peut être celle du bénéficiaire directement ! Le chèque virtuel fonctionne de manière similaire: nous vous envoyons simplement un code coupon, que nous pouvons aussi envoyer directement au bénéficiaire si vous nous laissez son adresse email. 
+					</li>
+					<li>
+						Vous pouvez dans tous les cas laisser en commentaire de commande un message, que nous recopions au verso du chèque ! 
+					</li>
+					<li>
+						Le code coupon figurant sur le chèque permettra au bénéficiaire d'effectuer ses achats en ligne, et le montant du chèque sera déduit automatiquement de sa commande. Il peut bien entendu se présenter au show-room avec le chèque et faire ses achats directement...
+					</li>
+				</ul>
+				<h3>Nos différents chèques&nbsp;:</h3>
+				<ul class="valeurs">
+					<li>
+						<img src="img/cheque10.png" alt="Chèque cadeau - valeur de 10€" width="150" height="69">
+						<br>
+						<button class="cheque">Ajouter au panier</button>
+					</li>
+					<li>
+						<img src="img/cheque25.png" alt="Chèque cadeau - valeur de 25€" width="150" height="69">
+						<br>
+						<button class="cheque">Ajouter au panier</button>
+					</li>
+					<li>
+						<img src="img/cheque50.png" alt="Chèque cadeau - valeur de 50€" width="150" height="69">
+						<br>
+						<button class="cheque">Ajouter au panier</button>
+					</li>
+					<li>
+						<img src="img/chequeAteliers.png" alt="Chèque cadeau - Ateliers nature" width="150" height="69">
+						<br>
+						<button class="cheque">Ajouter au panier</button>
+					</li>
+				</ul>
 			</div>
 		</section>
 		<footer>

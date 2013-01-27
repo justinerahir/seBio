@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="Sebio - Créer mon compte / S'inscrire">
-		<title>SeBIO - Créer mon compte / S'inscrire </title>
-
+        <meta name="description" content="Sebio - Fiche produit">
+		<title>SeBIO - Fiche produit</title>
 		<link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
@@ -508,149 +507,58 @@
 		</header>
 		<section id="container">
 			<h1 class="none">Section content</h1>
-			<h2>Identification</h2>
-			<div class="mon-compte">
-				<h3>J'ai déjà un compte chez seBio</h3>
-				<p>
-					S'identifier
-				</p>
-				<form action="connecte.html">
-					<label for="email"> Email&nbsp;:</label><input type="text" name="email" id="email"/>
-					<label for="password"> Mot de passe&nbsp;:</label><input type="password" name="password" id="password"/>
-
-					<a href="#" title="Récupérez votre mot de passe">Mot de passe oublié ?</a>
-
-					<button>
-						Se connecter
-					</button>
-				</form>	
+			<div class="sous-menu">
+				<ul>
+					<li>
+						<a href="index.html">Accueil</a>
+					</li>
+					<li>
+						<a href="nouveautes.html">Nouveautés</a>
+					</li>
+					<li>
+						<a href="promotions.html">Promotions</a>
+					</li>
+					<li>
+						<a href="liquidations.html">Liquidations</a>
+					</li>
+					<li>
+						<a href="a-propos.html">à propos</a>
+					</li>
+					<li>
+						<a href="cheques-cadeaux.html">Chèques cadeaux</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
 			</div>
-			<div class="inscription">
-				<h3>Je suis nouveau chez seBio</h3>	
-				<p>
-					Créer un compte
-				</p>
-				<form action="#creer-compte">
-					<label for="email"> Email&nbsp;:</label>
-					<input type="text" name="email" id="email"/>
-					<label for="password"> Mot de passe&nbsp;:</label>
-					<input type="password" name="password" id="password"/>
-
-					<a class="hidden" href="#" title="Récupérez votre mot de passe">Mot de passe oublié ?</a>
-
-					<button>
-						Créer un compte
-					</button>
-				</form>	
-			</div>
-			<div id="creer-compte">
-				<h3>Création de votre compte</h3>
-				<form action="connecte.html">
-					<fieldset>
-						<legend>Infos de connexion</legend>
-						<p>
-							<label for="email1">Email&nbsp;:</label>
-							<input type="text" name="email1" id="email1"/>
-						</p>
-						<p>
-							<label for="password1">Mot de passe&nbsp;:</label>
-							<input type="password1" name="password1" id="password1"/>	
-						</p>
-					</fieldset>
-					<fieldset>
-						<legend>Infos personnelles</legend>
-
-						<p>
-							<label for="genre">Genre&nbsp;:</label>
-							<select name="genre" id="genre">
-							   <option value="homme">Homme</option>
-							   <option value="femme">Femme</option>
-							</select>
-						</p>
-						<p>
-						<label for="civilite">Civilité&nbsp;:</label>
-							<select name="civilite" id="civilite">
-							   <option value="monsieur"> Mr</option>
-							   <option value="madame"> Mme</option>
-							   <option value="mademoiselle"> Melle</option>
-							</select>
-						</p>
-						<p>
-							<label for="prenom">Prénom&nbsp;:</label>
-							<input type="text" name="prenom" id="prenom"/>	
-						</p>
-						<p>
-							<label for="nom">Nom&nbsp;:</label>
-							<input type="text" name="nom" id="nom"/>
-						</p>
-						<p>
-							<label for="rue">Rue / n°&nbsp;:</label>
-							<input type="text" name="rue" id="rue"/>
-						</p>
-						<p>
-							<label for="code">Code postal&nbsp;:</label>
-							<input type="text" name="code" id="code"/>	
-						</p>
-						<p>
-							<label for="ville">Ville&nbsp;:</label>
-							<input type="text" name="ville" id="ville"/>
-						</p>
-						<p>
-							<label for="pays">Pays&nbsp;:</label>
-							<select name="pays" id="pays">
-							    <option value="Belgique">Belgique</option>
-							    <option value="France">France</option>
-							    <option value="Luxembourg">Luxembourg</option>
-							    <option value="Italie">Italie</option>
-							    <option value="Allemagne">Allemagne</option>
-							</select>
-						</p>
-						<p>
-							<label for="telephone">Téléphone&nbsp;:</label>
-							<input type="text" name="telephone" id="telephone"/>
-						</p>
-						<p>
-							<label for="gsm">GSM&nbsp;:</label>
-							<input type="text" name="gsm" id="gsm"/>
-						</p>
-					</fieldset>
-
-					<fieldset>
-						<legend>Infos supplémentaires</legend>
-						<p class="news">
-							Souhaitez-vous vous inscrire à notre newsletter ?
-							<br>Vous pouvez annuler votre inscription à tout moment.
-							<p class="newsletter-form">
-								<label for="newsletter">Newsletter&nbsp;:</label>
-								<input type="checkbox" name="newsletter" value="newsletter">
-							</p>
-						</p>
-						<p>
-							<p>Comment avez-vous connu seBio&nbsp;?</p>
-							<select name="pays" id="pays">
-							    <option value="ami">Par un ami/connaissance</option>
-							    <option value="google">Recherche sur google</option>
-							    <option value="yahoo">Recherche sur yahoo</option>
-							    <option value="autre">Recherche sur un autre site</option>
-							    <option value="showRoom">En passant devant le show-room</option>
-							     <option value="bruxelles">Par le guide de Bruxelles-vert</option>
-							    <option value="bioInfo">Pub dans le magazine Bio info</option>
-							    <option value="kelkoo">Site d'achat Kelkoo</option>
-							    <option value="vitalprix">Site d'achat Vitalprix</option>
-							    <option value="guide">Site d'achat Le Guide</option>
-							    <option value="beauté">Site d'achat Beauté-test</option>
-							</select>
-						</p>
-
-						<p class="confident">
-							<strong>Politique de confidentialité&nbsp;:</strong> Aucune information personnelle ne sera communiquée à des tiers sans votre consentement explicite. Nous, (SeBIO S.P.R.L.), collectons vos données sur ce formulaire pour traiter votre commande, ce qui ne sera pas possible si vous ne nous communiquez pas les renseignements demandés. Vous bénéficiez d'un droit d'accès, de rectification et d'opposition au traitement des données vous concernant.
-						</p>
-					</fieldset>
-
-					<button type="submit">
-						S'inscrire
-					</button>
-				</form>	
+			<div class="article">
+				<img src="img/Produits/disques-filtrant.jpg" alt="Disques filtrants" width="153" height="150">
+				<h3>Disques filtrants</h3>
+				<div class="price">
+					<p class="euro">12,95€ <span>TVAC</span></p>
+					<p>
+						Qté&nbsp;: 
+						<input type="text" name="qte" id="qte">
+					</p>
+				</div>
+				<p class="description FP-description">
+					Une eau filtrée au goût agréable partout avec vous! La technologie de filtration par bloc de charbon BRITA réduit significativement les substances altérant le goût et l'odeur de l'eau comme le chlore et les particules fines.	
+					<br>
+					<br>
+					Boire une eau au goût agréable n'a jamais été aussi <strong>simple !</strong> 
+					La nouvelle BRITA Fill&Go filtre l'eau au moment où vous la buvez, vous avez ainsi une eau agréable à boire et qui vous vous accompagne dans tous vos déplacements. Solution pratique pour réduire vos déchets plastiques, mais aussi vos dépenses !
+					<br>
+    				Une hygiène et une qualité constantes grâce à un changement hebdomadaire
+    				<br>
+   					1 disque filtrant BRITA Fill&Go = 1 semaine
+   					<br>
+    				Un étui de 8 disques filtrants = 8 semaines d'utilisation
+    				<br>
+    				<br>
+					<span class="stock"><strong>En stock</strong> &ndash; expédition possible sous 1 jour</span>
+				</p>	
+				<button class="fp">Ajouter au panier</button>
 			</div>
 		</section>
 		<footer>

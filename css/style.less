@@ -16,7 +16,7 @@
     font-style: normal;
 }
 
-/************* PROPRIETES LESS ********************/
+// PROPRIETES LESS //
 
 @beige: #DACBAE;
 @brun: #644415;
@@ -26,8 +26,64 @@
 @steelfish: 'Steelfish', 'Sans-serif';
 @ropa: 'RopaSansRegular', 'Sans-serif';
 
-/*********** FIN PROPRIETES LESS *****************/
-/******************** PROPRIETES COMMUNES ***********/
+.rounded-corners (@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.span16 {
+	width: 100%;
+}
+
+.span15 {
+	width: 93.75%;
+}
+
+.span14 {
+	width: 87.5%;
+}
+
+.span12 {
+	width: 75%;
+}
+
+.span11 {
+	width: 68.75%;
+}
+
+.span10 {
+	width: 62.5%;
+}
+
+.span7 {
+	width: 43.75%;	
+}
+
+.span6 {
+	width: 37.5%;	
+}
+
+.span5 {
+	width: 31.25%;	
+}
+
+.span3 {
+	width: 18.75%;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.none {
+	display: none;
+}
+
+// PROPRIETES LESS //
+// PROPRIETES COMMUNES //
 body {
 	background-image: url('../img/bg/body-bg.jpg');
 	font-family: @ropa;
@@ -45,7 +101,7 @@ h2 {
 	font-size: 34px;
 	font-family: @steelfish;
 	color:  @brun;
-	display: inline;
+	display: block;
 	text-transform: uppercase;
 	position: relative;
 	font-weight: normal;
@@ -61,14 +117,11 @@ h2 {
 		z-index: -1;
 		box-shadow: 2px 2px 2px #999;
 	}
-
-	&.h2-promo {
-		display: none;
-	}
 }
 
 #container {
-	margin: 30px 0 0 64px;
+	.span14;
+	margin: 3em auto;
 }
 
 #display-none {
@@ -85,6 +138,7 @@ button {
 	padding: 0.1em 0.2em;
 	width: 100%;
 	cursor: pointer;
+	.rounded-corners;
 
 	&:hover {
 		background-color: @vert;
@@ -92,40 +146,74 @@ button {
 	}
 }
 
-#fil-ariane {
-	padding-bottom: 1em;
+.sous-menu {
+	float: left;
+
+	ul {
+		width: 172px;
+		font-size: 15px;
+		background-color: @vert;
+		.rounded-corners;
+	}
 
 	li {
-		display: inline;
+		padding: 0.2em 0.5em;
+		text-align: left;
+		height: 25px;
+		border-bottom: 1px dashed @vert-clair;
+	}
 
-		&:first-child {
-			text-decoration: underline;	
-		}
+	li:hover {
+		background-color: @vert-clair;
+		border: 1px dashed @vert;
+	}
 
-	 	a {
-	 		color: @brun;
-	 	}
+	a {
+		text-decoration: none;
+		color: @brun;
+		text-transform: uppercase;
+		font-size: 18px;
 	}
 }
 
-/******************* FIN PROPRIETES COMMUNES ***********/
-/******************** HEADER ********************/
+.top_link {
+	position: fixed;
+	right: 2em;
+	top:32em;
+	display: none;
+	z-index: 2000;
+	text-decoration: none;
+	background: url('../img/hautPage.png') no-repeat;
+	height: 100px;
+	width: 111px;
+	text-indent: -9999px;
+}   
+
+.red {
+	color: #BF1328;
+}
+
+// PROPRIETES COMMUNES //
+// HEADER //
 header {
 	text-align: center;
-	padding-bottom: 1em;
+	position: relative;
 }
 
 h1 {
-	width: 233px;
-	height: 153px;
 	position: absolute;
-	margin: 20px 0 0 399px;
-	z-index: 2;
+	width: 100%;
+	height: 0px;
+	top: 1.5em;
+	
+	img {
+		z-index: 2;
+		position:relative;
+	}
 }
 
 #menu {
 	background-image: url('../img/bg/menu-bg.png');
-	width: 1024px;
 	height: 5.4em;
 	z-index: 1;
 	font-family: @steelfish;
@@ -134,6 +222,7 @@ h1 {
 
 	ul {
 		margin-left: -28px;
+		height: 0px;
 	}
 
 	li {
@@ -144,51 +233,60 @@ h1 {
 		padding: 0.1em 1em;
 		border: none;	
 		font-size: 30px;
-
-		&:hover {
-			color: @beige;
-			cursor: pointer;
-			background-color: @vert;
-			border-radius : 4px;
-		}
-
-		&.none {
-			padding: 0 1.5em;
-			visibility: hidden;
-		}	
 	}
+
+	a {
+		text-decoration: none;
+		color: @beige;
+		padding: 0.2em;
+	}
+
+	a:hover {
+		cursor: pointer;
+		background-color: @vert;
+		border-radius : 4px;
+	}
+
+	.none {
+		visibility: hidden;
+	}	
 }
 
 #sous-menu {
 	background-image: url('../img/bg/sous-menu.jpg');
-	width: 984px;
-	text-align: center;
-	position: relative;
 	margin: -0.5em auto;
+	.span15;
 }
 
 #search-box{
 	float: left;
-	margin: 30px 0 0 43px;
+	margin: 1.8em 0 0 2.6em;
+	position: relative;
+	.span3;
 
 	input {
 		background: url('../img/bg/search-box.png') no-repeat;
 		border: none;
-		padding: 0.6em;
-		font-size: 14px;	
+		padding: 0.2em;
+		font-size: 24px;	
 		color: @brun;
-		width: 155px;
-		border-radius: 4px;
+		.rounded-corners;
+		font-family: @steelfish;
 	}
 
-	p {
+	button {
 		position: absolute;
-		margin: -31px 0 0 140px;
+		left: 7.55em;
+		top: -0.35em;
+		height: 35px;
+		width: 35px;
 		cursor: pointer;
+		background: url('../img/spriteLoupe.png') no-repeat -50px 0px;	
+		text-indent: -9999px;
 	}
 
-	img {
-		border-radius: 4px;	
+	button:hover {
+		background: url('../img/spriteLoupe.png') no-repeat -115px 0px;	
 	}
 }
 
@@ -206,7 +304,12 @@ h1 {
 }
 
 #basket {
-	margin: 30px 46px 0 0;
+	margin: 1.8em 2.6em 0 0;
+
+	p {
+		color: @beige;
+		cursor: pointer;
+	}
 
 	p:before {
 		content:"";
@@ -214,12 +317,8 @@ h1 {
 		width: 100px;
 		text-indent: -9999px;
 		position: absolute;
-		margin: -8px 0 0 -30px;
+		margin: -0.5em 0 0 -1.8em;
 		height: 30px;
-	}
-
-	a {
-		text-decoration: none;
 	}
 }
 
@@ -228,11 +327,11 @@ h1 {
 	background-color: @beige;
 	border: 2px solid @vert-fonce;
 	padding: 0.6em;
-	margin-left: 773px;
-	margin-top: 50px;
+	left: 52em;
+	top: 8.8em;
 	z-index: 3;
 	font-size: 15px;
-	border-radius: 3px;
+	.rounded-corners;
 
 	p {
 		text-align: left;
@@ -269,18 +368,17 @@ h1 {
 	font-size: 19px;
 	position: relative;
 	top: -0.5em;
-	width: 896px;
 	margin: 0 auto;
 	font-family: @ropa;
 
 	li {
 		display: inline;
 		padding-right: 0.5em;
+	}
 
-		& + li {
-	  		border-left: 1.8px solid @beige;
-	  		padding-left: 0.5em;
-		}
+	li + li {
+  		border-left: 1.8px solid @beige;
+  		padding-left: 0.5em;
 	}
 
 	a {
@@ -301,7 +399,8 @@ h1 {
 
 #menu-dropdown .dropdown {
 	background-color: @beige;
-	border: 3px solid @vert-fonce;
+	border: 2px solid @vert-fonce;
+	border-top: 1px solid @beige;
 	position: absolute;
 	z-index: 2;
 	font-size: 16px;
@@ -322,10 +421,6 @@ h1 {
 		}
 	}
 
-	img {
-		box-shadow: 0px 0px 4px @vert;
-	}
-
 	a {
 		text-decoration: none;
 		color: @vert-fonce;	
@@ -334,12 +429,12 @@ h1 {
 	li {
 		display: block;
 		padding-left: 1em;
+	}
 
-		& a:hover {
+	li a:hover {
 			text-decoration: underline;
 			border: none;
 		}
-	}
 
 	.desc {
 		border-right: 2px solid @vert-fonce;
@@ -357,13 +452,13 @@ h1 {
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 26px;
 	font-weight: normal;
 	padding: 0.5em 0;
+	font-family: @steelfish;
 }
-/******************** FIN HEADER ********************/
-/******************** DIV AVANTAGES ********************/
-
+// HEADER //
+// DIV AVANTAGES //
 .avantages {
 	float: left;
 
@@ -379,26 +474,35 @@ h3 {
 		padding: 0.5em 0;
 		text-align: left;
 		height: 25px;
+	}
 
-		&.livraison {
-			background-position: 0px -48px;	
-		}
+	.livraison {
+		background-position: 0px -48px;	
+	}
 
-		&.frais {
-			background-position: 0px -96px;
-		}
+	.frais {
+		background-position: 0px -96px;
+	}
 
-		&.paiement {
-			background-position: 0px -144px;
-		}
+	.paiement {
+		background-position: 0px -144px;
+	}
 
-		&.service {
-			background-position: 0px -192px;
-		}
+	.service {
+		background-position: 0px -192px;
+	}
 
-		&.remise {
-			background-position: 0px -240px;
-		}
+	a {
+		text-decoration: none;
+		color: @vert;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.remise {
+		background-position: 0px -240px;
 	}
 
 	p {
@@ -411,15 +515,12 @@ h3 {
 .service p, .remise p, .frais p {
 	margin-top: -0.4em;
 }
-/******************* FIN DIV AVANTAGES ********************/
-/******************* PROMO FETES ********************/
-
-#promo-fetes {
+// DIV AVANTAGES //
+// PROMO FÊTES //
+#promo-fetes, .cheques-cadeaux, .a-propos {
 	margin-left: 260px;
 }
-
-/******************* FIN PROMO FETES ********************/
-
+// PROMO FÊTES //
 .news, .promos, .product-liquid, .product-list {
 	clear: both;
 	padding-top: 2em;
@@ -428,20 +529,20 @@ h3 {
 		color: @brun;
 		text-decoration: none;
 		text-align: center;
+	}
 
-		&.voir {
-			float: right;
-			margin: 25px 66px 0 0;
-			text-decoration: underline;	
-		}
+	a.voir {
+		float: right;
+		margin: 1.5em 1em 0 0;
+		text-decoration: underline;	
+	}
 
-		&.voir:hover {
-			text-decoration: none;
-		}
+	a.voir:hover {
+		text-decoration: none;
+	}
 
-		&.voir-liquid {
-			padding-bottom: 4em;
-		}
+	a.voir-liquid {
+		padding-bottom: 4em;
 	}
 
 	li {
@@ -449,7 +550,7 @@ h3 {
 		display: inline-block;
 		width: 152px;
 		background-color: @vert;
-		margin: 15px 20px 0 0;
+		margin: 15px 16px 0 0;
 		box-shadow: 2px 2px 1px #999;
 
 		&:hover {
@@ -466,42 +567,41 @@ h3 {
 			margin-top: -280px;
 			margin-left: 110px;
 		}
+	}
 
-		.reduction {
-			position: absolute;
-			margin-top: -276px;
-			margin-left: 127px;
-			font-size: 34px;
-			z-index: 1;
-			font-family: @steelfish;
-		}
+	.reduction {
+		position: absolute;
+		margin-top: -276px;
+		margin-left: 127px;
+		font-size: 34px;
+		z-index: 1;
+		font-family: @steelfish;
+	}
 
-		.pourcent {
-			font-size: 40%;
-			position: absolute;
-			margin-top: 21px;
-			margin-left: 3px;
-			font-family: @steelfish;
-		}
+	.pourcent {
+		font-size: 40%;
+		position: absolute;
+		margin-top: 21px;
+		margin-left: 3px;
+		font-family: @steelfish;
+	}
 
-		.delete-price {
-			text-align: right;
-			padding-right: 0.5em;
-			text-decoration: line-through;
-			font-family: @steelfish;
-			font-size: 18px;
-		}
+	.delete-price {
+		text-align: right;
+		padding-right: 0.5em;
+		text-decoration: line-through;
+		font-family: @steelfish;
+		font-size: 18px;
+	}
 
-		.new-price {
-			font-size: 38px;
-			color: @beige;
-			font-family: @steelfish;
-		}
+	.new-price {
+		font-size: 38px;
+		color: @beige;
+		font-family: @steelfish;
 	}
 }
 
-/*************** FOOTER ************************/
-
+// FOOTER //
 #footer {
 	border-top: 5px solid @vert;
 	height: 140px;
@@ -512,41 +612,38 @@ h3 {
 		display: inline-block;
 		float: left;
 		padding: 0 1em;
+	}
 
-		&.newsletter, &.livraison {
-			padding: 0 4em;
+	.newsletter, .livraison {
+		padding: 0 4em;
+
+		input {
+			padding: 0.5em;
+			color: @brun;
 		}
 
-		&.newsletter {
+		.submit {
+			font-size: 18px;
+			font-family: @ropa;
+			background-color: @vert;
+			color: @beige;
+			border: none;
+			padding: 0.2em;
+			cursor: pointer;
 
-			input {
-				padding: 0.5em;
-				color: @brun;
-			}
-
-			.submit {
-				font-size: 18px;
-				font-family: @ropa;
-				background-color: @vert;
-				color: @beige;
-				border: none;
-				padding: 0.2em;
-				cursor: pointer;
-
-				&:hover {
-					background-color: @brun;
-				}
+			&:hover {
+				background-color: @brun;
 			}
 		}
+	}
 
-		&.paiement {
-			padding-left: 1.3em;
-			padding-right: 1.3em;
-		}
+	.paiement {
+		padding-left: 1.3em;
+		padding-right: 1.3em;
+	}
 
-		p {
-			padding-bottom: 1em;
-		}
+	p {
+		padding-bottom: 1em;
 	}
 
 	h3 {
@@ -562,32 +659,6 @@ h3 {
 		height: 30px;
 	}
 
-	.paiement li {
-		background: url('../img/icones/paiement.png') no-repeat;
-
-		a {
-			text-indent: -9999px;
-			display: inline-block;
-		}
-
-		&.cb {
-			background-position: -58px 0px;
-		}
-
-		&.mastercard {
-			background-position: -111px 0px;
-		}
-
-		&.visa{
-			background-position: -170px 0px;
-		}
-
-		&.paypal {
-			background-position: -231px 0px;
-			width: 65px;
-		}
-	}
-
 	.livraison li {
 		background: url('../img/icones/livraison.png') no-repeat;
 
@@ -600,6 +671,32 @@ h3 {
 			background-position: -68px 0px;
 			width: 38px;
 		}
+	}
+
+	.paiement li {
+		background: url('../img/icones/paiement.png') no-repeat;
+
+		a {
+			text-indent: -9999px;
+			display: inline-block;
+		}
+	}
+
+	li.cb {
+		background-position: -58px 0px;
+	}
+
+	li.mastercard {
+		background-position: -111px 0px;
+	}
+
+	li.visa{
+		background-position: -170px 0px;
+	}
+
+	li.paypal {
+		background-position: -231px 0px;
+		width: 65px;
 	}
 }
 
@@ -620,14 +717,14 @@ h3 {
 
 	p {
 		padding-left: 0.5em;
+	}
 
-		a {
-			color: @brun;
-			text-decoration: none;
+	a {
+		color: @brun;
+		text-decoration: none;
 
-			&:hover {
-				text-decoration: underline;
-			}
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 
@@ -638,54 +735,54 @@ h3 {
 		width: 177px;
 		display: inline-block;
 		float: left;
+	}
 
-		&.client {
-			padding-left: 4em;
+	.client {
+		padding-left: 4em;
+	}
+
+	.facebook {
+
+		p {
+			margin: 10px 0 0 35px;
 		}
 
-		&.facebook {
+		a {
+			color: @beige;
+			text-decoration: none;
 
-			p {
-				margin: 10px 0 0 35px;
+			&:hover {
+				text-decoration: underline;
+			}
+
+			&:before {
+				content:"";
+				background: url('../img/icones/facebook.png') no-repeat;
+				width: 100px;
+				text-indent: -9999px;
+				margin: -6px 0 0 -35px;
+				position: absolute;
+				height: 50px;
+			}
+		}
+	}
+
+	.copyright {
+		margin-top: 1em;
+		padding: 1em 0;
+		width: 100%;
+		text-align: center;
+		color: @brun;
+
+		li {
+			display: inline;
+
+			& + li  {
+				border-left: 1px solid @brun;
 			}
 
 			a {
-				color: @beige;
-				text-decoration: none;
-
-				&:hover {
-					text-decoration: underline;
-				}
-
-				&:before {
-					content:"";
-					background: url('../img/icones/facebook.png') no-repeat;
-					width: 100px;
-					text-indent: -9999px;
-					margin: -6px 0 0 -35px;
-					position: absolute;
-					height: 50px;
-				}
-			}
-		}
-
-		&.copyright {
-			margin-top: 1em;
-			padding: 1em 0;
-			width: 100%;
-			text-align: center;
-			color: @brun;
-
-			li {
-				display: inline;
-
-				& + li  {
-					border-left: 1px solid @brun;
-				}
-
-				a {
-					color: @brun;
-				}
+				color: @brun;
 			}
 		}
 	}
@@ -705,60 +802,377 @@ h3 {
 }
 /************** FIN FOOTER ********************/
 
-/*****************************************************
-***************** MON COMPTE.HTML*********************
-*****************************************************/
+// MON-COMPTE.HTML
 
-#mon-compte {
-	margin-right: 22px;
+fieldset {
+	border: 1px dashed @brun;
+	padding: 1em;
 }
 
-#mon-compte, #inscription {
-	float: left;
-	background-color: rgba(134,174,40,0.3);
-	padding: 1em;
-	width: 400px;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	height: 280px;
-	font-size: 20px;
+legend {
+	padding: 0.5em;
+	text-transform: uppercase;
+	font-family: @steelfish;
+	font-size: 23px;
+}
 
-	h3 {
-		background-color: @vert;
-		padding: 0.2em 0;
-		position: relative;
-		width: 440px;
-		margin: -20px 0 20px -20px;
-		text-align: center;
-		font-size: 26px;
-		text-transform: none;
+div#creer-compte {
+	.span14;
+	margin-top: 0em;
+
+	label {
+		display: inline-block;
+		font-size: 18px;
 	}
 
 	p {
-		font-size: 24px;
-		margin-bottom: 0.8em;
-		padding-bottom: 0.5em;
-		border-bottom: 1px dashed @vert-fonce;
+		font-size: 16px; 
+		border: none;
+		margin-bottom: 0.2em;
 	}
 
 	input {
+		margin: 0em;
+		.span6;
+	}
+
+	select {
+		color: @vert-fonce;
+		.rounded-corners;
+		border: none;
+		padding: 0.2em;
+	}
+
+	button {
+		margin-top: 2em;
+	}
+}
+
+p.news {
+	padding-top: 0em;
+}
+
+.newsletter-form {
+	.span5;
+
+	label {
+		padding-right: 0em;
+	}
+}
+
+.confident {
+	margin-top: 1em;
+}
+
+.mon-compte, div.inscription, #creer-compte {
+	.span6;
+	.rounded-corners;
+	background-color: rgba(134,174,40,0.3);
+	padding: 1em;
+	margin: 4em 2em 3em;
+	font-size: 18px;
+	float: left;
+	position: relative;
+
+	h3 {
+		background-color: @vert;
+		.rounded-corners;
+		padding: 0.2em 0;
+		position: relative;
+		margin: -0.75em auto 0em;
+		top: -0.5em;
+		text-align: center;
+		font-size: 27px;
+		text-transform: uppercase;
+		.span16;
+	}
+
+	p {
+		.span12;
+		font-size: 22px;
+		margin-bottom: 0.8em;
+		padding-bottom: 0.2em;
+		border-bottom: 1px dashed @vert-fonce;
+	}
+
+	input, textarea {
 		font-family: @steelfish;
-		width: 150px;
-		margin-bottom: 0.5em;
+		width: 180px;
+		margin-bottom: 0.8em;
+		.rounded-corners;
+		font-size: 23px;
+		color: @vert-fonce;
+		padding: 0.1em;
+		border: none;
 	}
 
 	label {
-		display: block;
-		width: 80px;
-		margin: 0.2em 0;
+		width: 130px;
+		float: left;
+		text-align: right;
+		padding-right: 1em;
+	}
+
+	button {
+		margin: 0em;
+		padding: 0.3em 0em;
+	}
+
+	a {
+		font-size: 14px;
+		color: @brun;
+		float: right;
+		margin-bottom: 0.5em;
+	}
+
+	a:hover {
+		text-decoration: none;
 	}
 }
 
-/*****************************************************
-***************** INSCRIPTION.HTML*********************
-*****************************************************/
-
-#form {
-	font-size: 35px;
+// NOUVEAUTES.HTML
+.nouveautes, .a-propos p {
+	margin: 2em 0em;
 }
 
+.article, .top-bar {
+	.span12;
+	margin-left: 14em;
+}
+
+.top-bar {
+	ul {
+		text-align: right;
+		li {
+			display: inline;
+		}
+
+		a {
+			text-decoration: none;
+			color: @brun;
+			background-color: @vert;
+			padding: 0.1em 0.5em;
+			.rounded-corners;
+			font-size: 18px;
+		}
+	}
+
+	a:hover, select:hover {
+		background-color: @brun;
+		color: @vert;
+	}
+}
+
+.affichage {
+	position: relative;
+	top: -1.8em;
+	left: 24.5em;
+	.span7;
+
+	select {
+		.rounded-corners;
+		border: none;
+		padding: 0.1em;
+		background-color: @vert;
+		color: @brun;
+	}
+}
+
+.nb-results {
+	border-bottom: 1px dashed @brun;
+	padding-bottom: 0.5em;
+}
+
+.article {
+	.span11;
+	.rounded-corners;
+	background-color: rgba(134,174,40,0.3);
+	padding: 1em;
+	margin-left: 13em;
+	margin-top: 1em;
+	font-size: 18px;
+	position: relative;	
+
+	img {
+		float: left;
+		border: 3px solid @vert;
+		.rounded-corners;
+	}
+
+	h3 {
+		margin-left: 6.1em;
+		text-transform: uppercase;
+		font-size: 30px;
+		color: @vert;
+	}
+
+	button {
+		width: 160px;
+		padding: 0.5em 0em;
+	}
+
+	a {
+		background-color: @vert-fonce;
+		padding: 0.2em 0em;
+		margin-top: 0.5em;
+		color: @beige;
+		display: block;
+		text-align: center;
+		text-decoration:none;
+		width: 160px;
+		.rounded-corners;
+	}
+
+	a:hover {
+		background-color: @vert;
+		color: @brun;
+	}
+}
+
+.description {
+	float: right;
+	.span11;
+	margin-top: -10em;
+	position: relative;
+	left: -0.5em;
+}
+
+.FP-description {
+	float: none;
+	margin-left: 10.7em;
+}
+
+.fp {
+	margin-top: -8.5em;
+	float: left;
+}
+
+.price{
+	background-color: @vert;
+	.rounded-corners;
+	width: 132px;
+	padding: 0.5em;
+	font-family: @steelfish;
+	font-size: 27px;
+	text-align:center;
+
+	input {
+		width: 30px;
+	}
+}
+
+.euro {
+	font-size: 40px;
+	color: @vert-fonce;
+
+	span {
+		font-size: 20px;
+	}
+}
+// A PROPOS.HTML
+.a-propos {
+	.span10;
+	margin-left: 0em;
+}
+
+// CHEQUES-CADEAUX.HTML
+.cheques-cadeaux {
+	p {
+		margin-top: 1em;
+		font-size: 20px;
+	}
+
+	ul {
+		width: 635px;
+	}
+
+	li {
+		padding-top: 1em;
+		list-style-image: url('../img/icones/puce.png');
+	}
+
+	.valeurs {
+
+		margin: 2em 0;
+
+		li {
+			display: inline-block;
+			list-style-type: none;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.cheque {
+		width: 152px;
+		display: block;
+		margin: 0.5em auto;
+		font-size: 16px;
+		background-color: @vert;
+		color: @brun;
+	}
+
+	.cheque:hover {
+		background-color: @brun;
+		color: @vert;
+	}
+}
+
+// CONTACT.HTML 
+div.adresse {
+	p {
+		border: none;
+		font-size: 18px;
+		.span16;
+	}
+}
+
+// CATEGORIE.HTML 
+.article .cat {
+	width: 136px;
+}
+
+.article .a-h3 {
+	background: none;
+	color: @vert;
+	.span12;
+	margin: -0.1em -2em;
+}
+
+/////////// MEDIA QUERIES ///////////
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	h2:after {
+		top: 50px;
+	}
+
+	#menu li {
+		padding-top: 0em;
+	}
+
+	.news, .promos, .product-liquid, .product-list {
+		li.marqueurs:after {
+			margin-top: -310px;
+		}
+		.reduction {
+			margin-top: -325px;
+			margin-left: 123px;
+		}
+		.pourcent {
+			margin-left: 13px;
+			margin-top: 31px;
+		}
+	}
+
+	#search-box input {
+		height: 30px;
+		color: @brun;
+		margin-top: 
+	}
+
+	#search-box button {
+		left: 7.4em;
+	}
+}
