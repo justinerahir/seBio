@@ -2,12 +2,16 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maxium-scale=1">
         <meta name="description" content="Sebio - Créer mon compte / S'inscrire">
 		<title>SeBIO - Créer mon compte / S'inscrire </title>
 
 		<link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+		<link href="css/reset.css" rel="stylesheet" type="text/css">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
 	<body>
 		<header>
@@ -48,7 +52,7 @@
 								<td>0,00€</td>
 							</tr>
 						</table>
-						<button>Voir le panier</button>
+						<a href="panier.html">Voir le panier</a>
 					</div>
 					<div id="connexion">
 						<ul>
@@ -530,18 +534,15 @@
 				<p>
 					Créer un compte
 				</p>
+				<p>
+					Vous êtes un nouveau visiteur sur SeBio ? <br>Nos produits vous intéresse et vous désirez profiter des toutes les promotions et de les avantages ? <br> <br>N'hésitez plus, inscrivez-vous ! 
+				</p>
+				
 				<form action="#creer-compte">
-					<label for="email"> Email&nbsp;:</label>
-					<input type="text" name="email" id="email"/>
-					<label for="password"> Mot de passe&nbsp;:</label>
-					<input type="password" name="password" id="password"/>
-
-					<a class="hidden" href="#" title="Récupérez votre mot de passe">Mot de passe oublié ?</a>
-
 					<button>
 						Créer un compte
 					</button>
-				</form>	
+				</form>
 			</div>
 			<div id="creer-compte">
 				<h3>Création de votre compte</h3>
@@ -554,7 +555,7 @@
 						</p>
 						<p>
 							<label for="password1">Mot de passe&nbsp;:</label>
-							<input type="password1" name="password1" id="password1"/>	
+							<input type="password" name="password1" id="password1"/>	
 						</p>
 					</fieldset>
 					<fieldset>
@@ -621,8 +622,9 @@
 							Souhaitez-vous vous inscrire à notre newsletter ?
 							<br>Vous pouvez annuler votre inscription à tout moment.
 							<p class="newsletter-form">
-								<label for="newsletter">Newsletter&nbsp;:</label>
-								<input type="checkbox" name="newsletter" value="newsletter">
+								<label class="newsletter" for="newsletter">Newsletter&nbsp;:</label>
+								<label for="newsletter2" class="hidden newsletter2">Newsletter&nbsp;:</label>
+								<input id="newsletter" type="checkbox" name="newsletter" value="newsletter" class="checkbox">
 							</p>
 						</p>
 						<p>
@@ -649,6 +651,9 @@
 
 					<button type="submit">
 						S'inscrire
+					</button>
+					<button type="reset">
+						Annuler
 					</button>
 				</form>	
 			</div>

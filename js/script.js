@@ -32,15 +32,28 @@
             $('.top_link').fadeOut(600);  
     });  
 
+    $('a[href=#top]').click(function(){
+		$('html').animate({scrollTop:0}, 'slow');
+		return false;
+	}); 
+
 
 	//- onload routines
-	$('.inscription').click(function(){
-		$(document).ready(displayRegistration());
-	});
-		
-	$('.compte').click(function(){
-		$(document).ready(displayConnect());
-	});
+
+	if($(".newsletter-form").hasClass("checked")==false){
+		$('.newsletter').click(function(e){
+			$('.newsletter2').removeClass('hidden');
+			$('.newsletter-form').addClass('checked');
+			$('.newsletter').hide();
+		});	
+	} else {
+		alert('coucou');
+		$('.newsletter2').click(function(e){
+			$('.newsletter2').addClass('hidden');
+			$('.newsletter-form').removeClass('checked');
+			$('.newsletter').show();
+		});
+	};
 
 	/**** MEGADROPDOWN ****/
 	$('.dropdown').hide();

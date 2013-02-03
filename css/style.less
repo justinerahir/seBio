@@ -1,5 +1,3 @@
-@import url(reset.css);
-
 @font-face {
     font-family: 'Steelfish';
     src: url('../font/steelfish.ttf');
@@ -68,6 +66,10 @@
 
 .span5 {
 	width: 31.25%;	
+}
+
+.span4 {
+	width: 25%;
 }
 
 .span3 {
@@ -165,7 +167,7 @@ button {
 
 	li:hover {
 		background-color: @vert-clair;
-		border: 1px dashed @vert;
+		.rounded-corners;
 	}
 
 	a {
@@ -173,13 +175,14 @@ button {
 		color: @brun;
 		text-transform: uppercase;
 		font-size: 18px;
+		display: block;
 	}
 }
 
 .top_link {
 	position: fixed;
 	right: 2em;
-	top:32em;
+	top: 25em;
 	display: none;
 	z-index: 2000;
 	text-decoration: none;
@@ -305,6 +308,7 @@ h1 {
 
 #basket {
 	margin: 1.8em 2.6em 0 0;
+	height: 30px;
 
 	p {
 		color: @beige;
@@ -313,8 +317,8 @@ h1 {
 
 	p:before {
 		content:"";
-		background: url('../img/panier.png') no-repeat;
-		width: 100px;
+		background: url('../img/spriteLoupe.png') no-repeat;
+		width: 21px;
 		text-indent: -9999px;
 		position: absolute;
 		margin: -0.5em 0 0 -1.8em;
@@ -347,6 +351,21 @@ h1 {
 		padding-right: 2.5em;
 		text-align: right;
 	}		
+
+	a {
+		background-color: @vert-fonce;
+		color: @beige;
+		.rounded-corners;
+		padding: 0.5em;
+		text-decoration: none;
+		margin-top: 1em;
+		display: block;
+	}
+
+	a:hover {
+		background-color: @vert;
+		color: @vert-fonce;
+	}
 }
 
 #connexion {
@@ -393,7 +412,7 @@ h1 {
 
 	.li-nav:hover > a {
 		color: @beige;
-		border-bottom: 8px solid @beige;
+		border-bottom: 10px solid @beige;
 	}
 }
 
@@ -409,7 +428,7 @@ h1 {
 	text-align: left;
 	color: @vert-fonce;
 	height: 330px;
-	width: 100%;
+	width: 956px;
 
 	p {
 		padding: 0.2em 0;
@@ -454,7 +473,7 @@ h1 {
 h3 {
 	font-size: 26px;
 	font-weight: normal;
-	padding: 0.5em 0;
+	padding: 0em 0em 0.5em 0;
 	font-family: @steelfish;
 }
 // HEADER //
@@ -494,7 +513,7 @@ h3 {
 
 	a {
 		text-decoration: none;
-		color: @vert;
+		color: @vert-fonce;
 	}
 
 	a:hover {
@@ -651,53 +670,53 @@ h3 {
 		font-family: @steelfish;
 		font-size: 23px;
 	}
+}
 
-	.paiement li, .livraison li {
-		width: 33px;
+.paiement li, .livraison li {
+	width: 33px;
+	display: inline-block;
+	padding-right: 1em;
+	height: 30px;
+}
+
+.livraison li {
+	background: url('../img/icones/livraison.png') no-repeat;
+
+	a {
+		text-indent: -9999px;
 		display: inline-block;
-		padding-right: 1em;
-		height: 30px;
 	}
 
-	.livraison li {
-		background: url('../img/icones/livraison.png') no-repeat;
-
-		a {
-			text-indent: -9999px;
-			display: inline-block;
-		}
-
-		&.bpost {
-			background-position: -68px 0px;
-			width: 38px;
-		}
+	&.bpost {
+		background-position: -68px 0px;
+		width: 38px;
 	}
+}
 
-	.paiement li {
-		background: url('../img/icones/paiement.png') no-repeat;
+.paiement li {
+	background: url('../img/icones/paiement.png') no-repeat;
 
-		a {
-			text-indent: -9999px;
-			display: inline-block;
-		}
+	a {
+		text-indent: -9999px;
+		display: inline-block;
 	}
+}
 
-	li.cb {
-		background-position: -58px 0px;
-	}
+li.cb {
+	background-position: -58px 0px;
+}
 
-	li.mastercard {
-		background-position: -111px 0px;
-	}
+li.mastercard {
+	background-position: -111px 0px;
+}
 
-	li.visa{
-		background-position: -170px 0px;
-	}
+li.visa{
+	background-position: -170px 0px;
+}
 
-	li.paypal {
-		background-position: -231px 0px;
-		width: 65px;
-	}
+li.paypal {
+	background-position: -231px 0px;
+	width: 65px;
 }
 
 #footer-bis {
@@ -803,7 +822,9 @@ h3 {
 /************** FIN FOOTER ********************/
 
 // MON-COMPTE.HTML
-
+input {
+	letter-spacing: 0.02em;
+}
 fieldset {
 	border: 1px dashed @brun;
 	padding: 1em;
@@ -834,6 +855,11 @@ div#creer-compte {
 	input {
 		margin: 0em;
 		.span6;
+		padding-left: 0.5em;
+	}
+
+	.checkbox {
+		visibility: hidden;
 	}
 
 	select {
@@ -841,10 +867,13 @@ div#creer-compte {
 		.rounded-corners;
 		border: none;
 		padding: 0.2em;
+		font-size: 23px;
+		font-family: @steelfish;
 	}
 
 	button {
-		margin-top: 2em;
+		margin-top: 1em;
+		width: 25%;
 	}
 }
 
@@ -854,17 +883,29 @@ p.news {
 
 .newsletter-form {
 	.span5;
+	position: relative;
 
 	label {
 		padding-right: 0em;
 	}
 }
 
+#creer-compte .newsletter, #creer-compte .newsletter2 {
+	background: url('../img/icones/checkbox.png') no-repeat 140px 0px;
+	width: 130px;
+}
+
+#creer-compte .newsletter2 {
+	background: url('../img/icones/checkbox2.png') no-repeat 140px 0px;
+	position: relative;
+	width: 130px;
+}
+
 .confident {
 	margin-top: 1em;
 }
 
-.mon-compte, div.inscription, #creer-compte {
+.mon-compte, div.inscription, #creer-compte, .ma-commande {
 	.span6;
 	.rounded-corners;
 	background-color: rgba(134,174,40,0.3);
@@ -893,6 +934,13 @@ p.news {
 		margin-bottom: 0.8em;
 		padding-bottom: 0.2em;
 		border-bottom: 1px dashed @vert-fonce;
+
+		& + p {
+			.span16;
+			border: none;
+			font-size: 16.5px;
+		}
+
 	}
 
 	input, textarea {
@@ -904,13 +952,14 @@ p.news {
 		color: @vert-fonce;
 		padding: 0.1em;
 		border: none;
+		max-width: 180px;
 	}
 
 	label {
-		width: 130px;
+		width: 90px;
 		float: left;
 		text-align: right;
-		padding-right: 1em;
+		padding-right: 3em;
 	}
 
 	button {
@@ -933,6 +982,14 @@ p.news {
 // NOUVEAUTES.HTML
 .nouveautes, .a-propos p {
 	margin: 2em 0em;
+
+	a {
+		color: @vert-fonce;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
 }
 
 .article, .top-bar {
@@ -1003,7 +1060,7 @@ p.news {
 		margin-left: 6.1em;
 		text-transform: uppercase;
 		font-size: 30px;
-		color: @vert;
+		color: @vert-fonce;
 	}
 
 	button {
@@ -1032,7 +1089,7 @@ p.news {
 .description {
 	float: right;
 	.span11;
-	margin-top: -10em;
+	margin-top: -11em;
 	position: relative;
 	left: -0.5em;
 }
@@ -1057,7 +1114,14 @@ p.news {
 	text-align:center;
 
 	input {
-		width: 30px;
+		width: 25px;
+		vertical-align: middle;
+		background-color: @vert-fonce;
+		color:@beige;
+		padding: 0.1em;
+		border: none;
+		font-size: 23px;
+		font-family: @steelfish;
 	}
 }
 
@@ -1141,38 +1205,403 @@ div.adresse {
 	margin: -0.1em -2em;
 }
 
+// PANIER.HTML
+ul.mon-panier {
+	text-align: left;
+}
+
+.ma-commande {
+	.span11;
+	margin-top: 2em;
+	padding-bottom: 2em;
+
+	button {
+		width: 160px;
+		padding: 0.5em;
+		position: relative;
+		top: 1.5em;
+
+		a {
+			color: white;
+			text-decoration: none;
+			font-size: 18px;
+			float: left;
+			margin: 0em;
+		}
+	}
+
+	button:after {
+		content:"";
+		background: url('../img/icones/fleche.png') no-repeat;
+		display: block;
+		position: absolute;
+		height: 10px;
+		width: 30px;
+		left: 7.7em;
+		top: 0.9em;
+	}
+
+	.delete {
+		background: url('../img/icones/delete.png') no-repeat;
+		display: block;
+		text-indent: -9999px;
+		height: 50px;
+		width: 15px;
+		margin-top: 1em;
+	}
+
+	.hidden {
+		width: 15px;
+		display: block;
+	}
+
+	table {
+		display: block;
+		text-align: center;
+		.rounded-corners;
+		width: 100%;
+		background-color: @vert;
+	}
+
+	thead {
+		.rounded-corners;
+		display: block;
+		text-align: center;
+	}
+
+	tbody {
+		background-color:@vert-clair;
+		display: block;
+	}
+
+	tfoot {
+		display: block;
+
+		tr, td {
+			display: block;
+			text-align: right;
+			margin-bottom: -1em;
+			margin-right: 0.9em;
+		}
+
+		span {
+			margin-left: 1em;
+		}
+	}
+
+	th, td{
+		text-align: center;
+		padding: 0.5em;
+		vertical-align: middle;
+		border-bottom: 2px solid @vert;
+	}
+
+	.panier-name{
+		width: 356px;
+
+		img {
+			margin-left: -1em;
+		}
+	}
+
+	.panier-pu, .panier-qte, .panier-pt{
+		width: 50px;
+	}
+
+	input {
+		width: 40px;
+		height: 15px;
+		text-align: center;
+		margin-top: 0.8em;
+	}
+
+	.panier-adresse {
+		display: block;
+		width: 160px;
+
+		td {
+			border: none;
+		}
+	}
+
+	.radio {
+		height: 0px;
+		margin-top: 0.1em;
+		position: absolute;
+	}
+
+	.add-adr {
+		font-size: 18px;
+		position: relative;
+		top: 7em;
+		left: -26em;
+	}
+
+	.panier-transport {
+		width: 145px;
+	}
+
+	.panier-infos, .panier-infos2 {
+		width: 380px;
+		text-align: left;
+	}
+
+	.panier-infos2 {
+		border: none;
+	}
+
+	.panier-prix {width: 37px;}
+
+	.mode-paiement {
+		width: 220px;
+	}
+
+	.paiement ul {
+		margin-top: 1em;
+
+		.radio {
+			margin-top: 1.4em;
+		}
+	}
+}
+
 /////////// MEDIA QUERIES ///////////
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-	h2:after {
-		top: 50px;
-	}
-
-	#menu li {
-		padding-top: 0em;
-	}
-
+	h2:after {top: 50px;}
+	#menu li {padding-top: 0em;}
 	.news, .promos, .product-liquid, .product-list {
-		li.marqueurs:after {
-			margin-top: -310px;
-		}
-		.reduction {
-			margin-top: -325px;
-			margin-left: 123px;
-		}
-		.pourcent {
-			margin-left: 13px;
-			margin-top: 31px;
-		}
+		li.marqueurs:after {margin-top: -310px;}
+		.reduction {margin-top: -325px; margin-left: 123px;}
+		.pourcent {margin-left: 13px;margin-top: 31px;}
+	}
+	#search-box input {height: 30px;color: @brun;}
+	#search-box button {left: 7.4em;}
+}
+@media screen and (max-width: 960px) {
+	#promo-fetes img {width: 550px;height: 270px;}
+	#menu-dropdown {font-size: 18px;}
+	#basket-details {left: 45.6em;}
+	.news li, .promos li, .product-liquid li, .product-list li {width: 149px; margin-right: 2px;}
+	.news li img, .promos li img, .product-liquid li img, .product-list li img {width:149px; height: 146px;}
+	#footer .newsletter, #footer .livraison {padding: 0 2.4em;}
+	#footer {padding-top: 1em;}
+	#footer-bis .client {padding-left: 1em;}
+	#footer-bis div {padding-left: 0em;}
+	.affichage {left: 29em; .span4;}
+	.description {left: 0.5em; margin-top: -10em;}
+	.mon-compte, div.inscription, #creer-compte, .ma-commande {margin-right: 1.5em;}
+	.mon-compte label, div.inscription label, #creer-compte label, .ma-commande label {width: 64px;}
+	.ma-commande {width: 66.5%;}
+	.ma-commande .add-adr {left: -22em;}
+	.cheques-cadeaux ul {width: 550px;}
+	.article .a-h3 {margin: 0em -2em;}
+}
+@media screen and (min-width:480px) and (max-width: 767px) {
+	#menu li {padding: 0.1em 0.5em;}
+	#basket,#connexion {margin-top: 8.5em;}
+	#search-box {display: none;}
+	h1 {top: 1em;}
+	#menu li {top: 5.8em; padding: 0.1em 0.2em;}
+	#menu .none {display: none;}
+	#menu ul {margin-left: 0em;}
+	#promo-fetes img, .avantages {display: none;}
+	.news, .promos, .product-liquid, .product-list {padding-top: 0em;}
+	.news li, .promos li, .product-liquid li, .product-list li {margin: 2em 3.1em 2em 0em;}
+	.news a.voir, .promos a.voir, .product-liquid a.voir, .product-list a.voir {float: left;margin: -1em 0em 1em 0em;}
+	#footer .livraison {display: none;}
+	#footer .newsletter {padding-left: 2em;}
+	#footer {height: 163px;}
+	#footer div, #footer .paiement {width: 189px;padding-left: 0em;margin-right: 0em;}
+	#footer-bis{margin-top: 3em; }
+	#footer-bis .facebook {display: none;}
+	#footer-bis div {width: 96px; padding-left: 0.5em;}
+	#footer-bis .copyright {margin-top: -1.5em;}
+	.sous-menu {display: none;}
+	.article {margin-left: 0em; .span15;}
+	.description {font-size: 16px; left: 1em; margin-top: -13em;}
+	.price{width: 94px; }
+	.article img {width: 115px;}
+	.fp {margin-top: -16em;}
+	.article button {width: 120px;}
+	.article, .top-bar {margin-left: 0em;}
+	.affichage {width: 50%; left: 17.5em;}
+	.top-bar ul {width: 136%;}
+	.article h3{margin-left: 4.5em;}
+	.article a {width: 122px;}
+	.mon-compte, div.inscription, #creer-compte, .ma-commande {.span14; margin-left: 0em; margin-top: 2em;}
+}
+@media screen and (min-width:320px) and (max-width:480px) {
+	#menu li {
+		padding: 0.1em 0.05em;
+		font-size: 23px;
 	}
 
-	#search-box input {
-		height: 30px;
-		color: @brun;
-		margin-top: 
+	h1 img{
+		width: 180px;
+		height: 110px;
 	}
 
-	#search-box button {
-		left: 7.4em;
+	h1 {
+		top: 2em;
+	}
+
+	#search-box {
+		display: none;
+	}
+
+	#search-box, #basket,#connexion {
+		margin-top: 4em;
+	}
+
+	#promo-fetes img {
+		width: 380px;
+		height: 190px;
+	}
+
+	#promo-fetes, .cheques-cadeaux, .a-propos {
+		margin-left: 0em;
+		margin-top: 1em;
+	}
+
+	.avantages {
+		float: none;
+	}
+
+	.news li, .promos li, .product-liquid li, .product-list li {
+		margin-right: 2.1em;
+		margin-top: 1.5em;
+	}
+
+	.news a.voir, .promos a.voir, .product-liquid a.voir, .product-list a.voir {
+		float: left;
+		margin-top: 1em;
+	}
+
+	#footer {
+		height: 200px;
+	}
+
+	#footer div, #footer .newsletter, #footer .livraison, #footer .paiement {
+		width: 111px;
+		padding-left: 0em;
+		margin-right: 0em;
+	}
+
+	#footer .newsletter {
+		padding-left: 1em;
+	}
+
+	#footer .livraison{
+		padding-right: 0em;
+	}
+
+	#footer-bis{
+		margin-top: 3em;
+		height: 300px;
+	}
+
+	#footer-bis .client {
+		padding-left: 1em;
+	}
+
+	#footer-bis div {
+		width: 95px;
+	}	
+
+	#footer-bis div.facebook {
+		display: none;
+	}
+
+	#footer-bis .copyright {
+		font-size: 14px;
+		margin-top: 2em;
+	}
+}
+@media screen and (max-width:320px) {
+	#menu li {
+		padding: 0.1em 0.05em;
+		font-size: 23px;
+	}
+
+	h1 img{
+		width: 180px;
+		height: 110px;
+	}
+
+	h1 {
+		top: 2em;
+	}
+
+	#search-box {
+		display: none;
+	}
+
+	#search-box, #basket,#connexion {
+		margin-top: 4em;
+	}
+
+	#promo-fetes img {
+		width: 380px;
+		height: 190px;
+	}
+
+	#promo-fetes, .cheques-cadeaux, .a-propos {
+		margin-left: 0em;
+		margin-top: 1em;
+	}
+
+	.avantages {
+		float: none;
+	}
+
+	.news li, .promos li, .product-liquid li, .product-list li {
+		margin-right: 2.1em;
+		margin-top: 1.5em;
+	}
+
+	.news a.voir, .promos a.voir, .product-liquid a.voir, .product-list a.voir {
+		float: left;
+		margin-top: 1em;
+	}
+
+	#footer {
+		height: 200px;
+	}
+
+	#footer div, #footer .newsletter, #footer .livraison, #footer .paiement {
+		width: 111px;
+		padding-left: 0em;
+		margin-right: 0em;
+	}
+
+	#footer .newsletter {
+		padding-left: 1em;
+	}
+
+	#footer .livraison{
+		padding-right: 0em;
+	}
+
+	#footer-bis{
+		margin-top: 3em;
+		height: 300px;
+	}
+
+	#footer-bis .client {
+		padding-left: 1em;
+	}
+
+	#footer-bis div {
+		width: 95px;
+	}	
+
+	#footer-bis div.facebook {
+		display: none;
+	}
+
+	#footer-bis .copyright {
+		font-size: 14px;
+		margin-top: 2em;
 	}
 }
